@@ -9,7 +9,7 @@ class First extends PApplet {
 
   override def settings(): Unit = {
     size(ScreenDimension, ScreenDimension)
-    size(200, 200)
+    size(400, 400)
   }
 
   override def setup(): Unit = {
@@ -18,17 +18,14 @@ class First extends PApplet {
 
   override def draw(): Unit = {
 
-    fill(255, 0, 0 )
-    ellipse(50, 50 ,100, 100)
+    fill(255, 0, 0)
+    ellipse(width/2, height/2, width, height)
 
-    fill(0, 255, 0)
-    ellipse(150, 50, 100, 100)
+    fill(255, 255, 255)
+    ellipse(width/2, height/2, width*.75f, height*.75f)
 
-    fill(0, 0, 255)
-    ellipse(50, 150, 100, 100)
-
-    fill(255, 255, 0)
-    ellipse(150, 150, 100, 100)
+    fill(255, 0, 0)
+    ellipse(width/2, height/2, width/2, height/2)
   }
 
 }
