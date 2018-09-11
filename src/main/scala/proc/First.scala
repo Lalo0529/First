@@ -9,7 +9,7 @@ class First extends PApplet {
 
   override def settings(): Unit = {
     size(ScreenDimension, ScreenDimension)
-    size(400, 400)
+    size(150, 150)
   }
 
   override def setup(): Unit = {
@@ -18,14 +18,22 @@ class First extends PApplet {
 
   override def draw(): Unit = {
 
+    val targetX = random(0, width )
+    val targetY = random(0, height)
+    val targetSize = 50
+
     fill(255, 0, 0)
-    ellipse(width/2, height/2, width, height)
+ellipse(targetX, targetY, targetSize, targetSize)
 
     fill(255, 255, 255)
-    ellipse(width/2, height/2, width*.75f, height*.75f)
+    ellipse(targetX, targetY, targetSize * .75f, targetSize * .75f)
 
     fill(255, 0, 0)
-    ellipse(width/2, height/2, width/2, height/2)
+    ellipse(targetX, targetY, targetSize/2, targetSize/2)
+
+
+
+
   }
 
 }
@@ -33,3 +41,10 @@ class First extends PApplet {
 object First extends App {
   PApplet.main("proc.First")
 }
+
+
+
+
+
+
+
