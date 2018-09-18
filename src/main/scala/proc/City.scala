@@ -7,27 +7,31 @@ class City extends PApplet {
 
   override def settings(): Unit = {
     size(ScreenDimension, ScreenDimension)
-  size(200, 200)
+  size(500, 300)
   }
 
   override def setup(): Unit = {
 
 
   }
-def drawHouse(houseX: Float, houseY: Float, houseSize: Float  ): Unit ={
-  fill(225, 265, 245 )
-  rect(houseX, houseY, houseSize, houseSize )
 
-  fill(235, 255, 245 )
-  rect(houseX, houseY, houseSize*.75f, houseSize*.75f)
+  def drawHouse(houseX: Float, houseY: Float, houseSize: Float  ): Unit ={
+  fill(0,0, 0)
+  rect(30, 75, 55, 50)
 
-  fill(255, 265, 275)
-  rect(houseX, houseY, houseSize/2, houseSize/2)
+  fill(0,0,0)
+    triangle(31, 75, 58, 39, 85, 75)
+
+
+
+
+
 
 }
   override def draw(): Unit = {
-    background(200)
-    drawHouse(mouseX, mouseY, 100)
+    drawHouse( 50, 150 ,100)
+
+
 
 
 
