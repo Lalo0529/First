@@ -1,18 +1,19 @@
 package proc
 
-import java.text.NumberFormat
-
 import processing.core.PApplet
 
-class First extends PApplet {
+class CreatingFunctions extends PApplet {
   val ScreenDimension = 1080
 
   override def settings(): Unit = {
     size(ScreenDimension, ScreenDimension)
-    size(150, 150)
+    size(150,150)
   }
 
+
+
   override def setup(): Unit = {
+
 
   }
   def drawTarget(targetX: Float, targetY: Float, targetSize: Float): Unit = {
@@ -25,23 +26,25 @@ class First extends PApplet {
     ellipse(targetX, targetY, targetSize / 2, targetSize / 2)
   }
 
+
+
+
+
+
+
   override def draw(): Unit = {
-
-
-    }
-   background(200)
-    drawTarget(mouseX, mouseY, 100)
-
-
+drawTarget(random(0, width), random(0, height), random(25, 100))
   }
-
-
-
-
-
-object First extends App {
-  PApplet.main("proc.First")
 }
+
+
+
+
+object CreatingFunctions extends PApplication
+
+
+
+
 
 
 
