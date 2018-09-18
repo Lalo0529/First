@@ -12,24 +12,25 @@ class City extends PApplet {
 
   override def setup(): Unit = {
 
-
   }
 
   def drawHouse(houseX: Float, houseY: Float, houseSize: Float  ): Unit ={
-  fill(0,0, 0)
+
+    stroke(225, 0, 255)
+    fill(225,0,0)
   rect(30, 75, 55, 50)
 
-  fill(0,0,0)
+    stroke(225)
+  fill(225)
     triangle(31, 75, 58, 39, 85, 75)
-
-
-
-
-
-
-}
+  }
   override def draw(): Unit = {
-    drawHouse( 50, 150 ,100)
+    drawHouse( mouseX, mouseY ,100)
+    if(mousePressed){
+      drawHouse( mouseX, mouseY ,100)
+    }
+    else{ellipse(mouseX, mouseY, 69, 96)
+    }
 
 
 
