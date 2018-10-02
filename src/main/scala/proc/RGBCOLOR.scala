@@ -16,22 +16,19 @@ class RGBCOLOR extends PApplet {
   }
 
   override def draw(): Unit = {
-    background(156,240,159)
-    stroke(0,0,255)
-    line(110,50,20,250)
+    fill(255)
+    ellipse(100,70,60,60)
 
-    stroke(0, 0, 255)
-    line(110,50,200,250)
+    fill(0)
+    ellipse(81,70,16,32)
+    ellipse(119,70,16,32)
 
-    stroke(0, 0, 255)
-    line(20,250,200,250)
+    stroke(0)
+    line(90,150,80,160)
+    line(110,150,120,160)
 
-    stroke(0, 0, 255)
-    line(270,50,200,250)
-
-    stroke(0, 0, 255)
-    line(110,50,270,50)
-
+    fill(155)
+    rect(90,100,20,50)
 
   }
 
