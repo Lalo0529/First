@@ -25,6 +25,9 @@ class ConditionalStatement extends PApplet {
     background(255,0,255)
     }else if (mouseX > 200){
     background(0,255,0)
+    }else if (mouseX > 100){
+      background(255,255,125)
+
     }
 
     stroke(255)

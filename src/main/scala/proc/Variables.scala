@@ -2,7 +2,7 @@ package proc
 
 import processing.core.PApplet
 
-class Variables extends PApplet {
+class   Variables extends PApplet {
   val ScreenDimension = 1080
 
   override def settings(): Unit = {
