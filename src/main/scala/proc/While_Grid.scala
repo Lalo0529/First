@@ -12,6 +12,7 @@ class While_Grid extends PApplet {
   }
   var x: Float = 0
   var y: Float = 0
+  var spacing: Float = 20
   override def setup(): Unit = {
 
   }
@@ -22,16 +23,16 @@ class While_Grid extends PApplet {
     stroke(255)
     strokeWeight(2)
 
-    x = 50
+    x = 0
     while (x < width) {
       line(x,0,x,height)
-      x = x + 50
+      x = x + spacing
     }
 
-    y = 50
+    y = 0
     while (y < width){
       line(0,y,width,y)
-      y = y + 50
+      y = y + spacing
     }
 
 
