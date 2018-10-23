@@ -10,6 +10,7 @@ class Nested_loops extends PApplet {
   override def settings(): Unit = {
     size(ScreenDimension, ScreenDimension)
     size(400,300)
+    noLoop()
   }
 
   override def setup(): Unit = {
@@ -24,14 +25,11 @@ class Nested_loops extends PApplet {
 
     for {
       x <- 0 until width by 20
+      y <- 0 until height  by 20
     }{
+      fill(random(255))
+      rect(x,y,20,20)
 
-      for {
-        y <- 0 until height  by 20
-      }{
-        fill(random(255))
-        rect(x,y,20,20)
-      }
     }
 
 
