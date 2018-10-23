@@ -1,6 +1,7 @@
 package proc
 
 import processing.core.PApplet
+import processing.core.PApplet._
 
 class Nested_loops extends PApplet {
   val ScreenDimension = 1080
@@ -27,8 +28,9 @@ class Nested_loops extends PApplet {
       x <- 0 until width by 20
       y <- 0 until height  by 20
     }{
-      fill(random(255))
+      fill(dist(width/2, height/2,x,y ))
       rect(x,y,20,20)
+
 
     }
 
