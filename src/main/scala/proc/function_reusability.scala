@@ -21,9 +21,7 @@ class function_reusability extends PApplet {
    override def draw(): Unit = {
     background(225)
     star(100,100)
-    star(200,200)
-    star(300,300)
-    star(400,360)
+
   }
 
   def star( x: Float  ,y: Float  ): Unit = {
