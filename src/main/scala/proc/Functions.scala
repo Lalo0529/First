@@ -20,7 +20,8 @@ class Functions extends PApplet {
 
     override def draw(): Unit = {
       background(51)
-      star(mouseX,mouseY)
+      star(100,100)
+      star(200,200)
   }
 
   def star(x:Float,y:Float): Unit  = {
