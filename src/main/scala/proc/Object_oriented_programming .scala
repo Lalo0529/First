@@ -18,22 +18,35 @@ class Object_oriented_programming extends PApplet {
 
   }
 
-  override def draw(): Unit = {
-   background(255)
-    stroke(0)
-    fill(127)
-    ellipse(x,y,32,32)
-
-    x = x + xspeed
-    y = y + yspeed
-    if (x > width || x < 0){
-      xspeed = xspeed * -1
+    override def draw(): Unit = {
+      background(255)
+      displayBall()
+      moveBall()
+      checkEdges() 
     }
-    if (y > height || y < 0){
-      yspeed = yspeed * -1
+
+    def displayBall(): Unit = {
+      stroke(0)
+      fill(127)
+      ellipse(x,y,32,32)
+
+    }
+    def moveBall (): Unit = {
+      x = x + xspeed
+      y = y + yspeed
+    }
+    def checkEdges (): Unit = {
+      if (x > width || x < 0){
+        xspeed = xspeed * -1
+      }
+      if (y > height || y < 0){
+        yspeed = yspeed * -1
       }
 
+    }
+
+
   }
-}
+
 
 object Object_oriented_programming extends PApplication
