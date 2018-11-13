@@ -30,6 +30,11 @@ P1 = new Particle(100,100,50)
 
   class Particle(var x: Float, var y: Float, var r: Float) {
 
+    this()= this(
+       random(width),
+       random(height),
+       random(4,18)
+    )
     def display(): Unit = {
       stroke(255)
       noFill()
