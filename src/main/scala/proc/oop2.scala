@@ -21,6 +21,11 @@ P1 = new Particle(100,100,50)
   override def draw(): Unit = {
     background(0)
 
+    var d: Float = dist (P1.x,P1.y,P2.x,P2.y)
+    if (d < P1.r + P2.r){
+      background(0,255,0)
+    }
+
     P2.x = mouseX
     P2.y =mouseY
 
@@ -30,7 +35,7 @@ P1 = new Particle(100,100,50)
 
   class Particle(var x: Float, var y: Float, var r: Float) {
 
-    this()= this(
+   def this() = this(
        random(width),
        random(height),
        random(4,18)
