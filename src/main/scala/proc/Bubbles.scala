@@ -26,13 +26,13 @@ class Bubbles extends PApplet {
   override def draw(): Unit = {
     background(255)
     stroke(1)
-    b1.ascend()
-    b1.display()
-    b1.top()
+    bubbles(0).ascend()
+    bubbles(0).display()
+    bubbles(0).top()
 
-    b2.ascend()
-    b2.display()
-    b2.top()
+    bubbles(1).ascend()
+    bubbles(1).display()
+    bubbles(1).top()
   }
   class Bubble(tempD:Float) {
 
