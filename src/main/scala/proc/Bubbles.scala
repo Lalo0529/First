@@ -8,7 +8,6 @@ class Bubbles extends PApplet {
 
   var b1: Bubble = null
   var b2: Bubble = null
-  var diameter: Unit = null
   val bubbles = new Array[Bubble](2)
 
   val ScreenDimension = 1080
@@ -18,8 +17,16 @@ class Bubbles extends PApplet {
   }
 
   override def setup(): Unit = {
-    bubbles(0) = new Bubble(64)
-    bubbles(1) = new Bubble(64)
+    var i = 0
+    while ( {
+      i < 2
+    }) {
+      bubbles(i) = new Bubble(64)
+
+      {
+        i += 1; i - 1
+      }
+    }
 
   }
 
@@ -27,16 +34,11 @@ class Bubbles extends PApplet {
     background(255)
     stroke(1)
     var i = 0
-    while ( {
-      i < 2
-    }) {
+    while ( i < 2 ) {
       bubbles(i).ascend()
       bubbles(i).display()
       bubbles(i).top()
-
-      {
-        i += 1; i - 1
-      }
+      i += 1; i - 1
     }
 
   }

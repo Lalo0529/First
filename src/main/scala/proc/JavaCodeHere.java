@@ -34,5 +34,12 @@ public class JavaCodeHere {
             bubbles[i].display();
             bubbles[i].top();
         }
+            for(int i = 0; i < 2; i++){
+                bubbles[i] = new Bubble(64);
+            }
+
+
+
+
     }
 }
