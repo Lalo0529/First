@@ -3,7 +3,7 @@ package proc
 import processing.core.PApplet
 
 trait PApplication {
-  def main(args: Array[String]): Unit = {
+  def main(args: scala.Array[String]): Unit = {
     PApplet.main(this.getClass.getName.init)
   }
 }
