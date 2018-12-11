@@ -5,10 +5,10 @@ import processing.core.PApplet._
 import processing.core.PConstants._
 
 class Bubbles extends PApplet {
-
+  var total: Int = 10
   var b1: Bubble = null
   var b2: Bubble = null
-  val bubbles = new Array[Bubble](2)
+  val bubbles = new Array[Bubble](100)
 
   val ScreenDimension = 1080
   override def settings(): Unit = {
@@ -19,7 +19,7 @@ class Bubbles extends PApplet {
   override def setup(): Unit = {
     var i = 0
     while ( {
-      i < 2
+      i < bubbles.length
     }) {
       bubbles(i) = new Bubble(64)
 
@@ -30,11 +30,15 @@ class Bubbles extends PApplet {
 
   }
 
+  override def mousePressed(): Unit = {
+    total = total + 1
+  }
+
   override def draw(): Unit = {
     background(255)
     stroke(1)
     var i = 0
-    while ( i < 2 ) {
+    while ( i < total  ) {
       bubbles(i).ascend()
       bubbles(i).display()
       bubbles(i).top()

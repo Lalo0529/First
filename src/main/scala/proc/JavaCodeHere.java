@@ -2,6 +2,7 @@ package proc;
 
 public class JavaCodeHere {
     class Bubble {
+
         public Bubble(int size) {
         }
 
@@ -18,6 +19,7 @@ public class JavaCodeHere {
     }
 
     void javaCodeHere() {
+
         int[] foo = new int[10];
         int[] bar = {5, 6, 7, 8, 9};
 
@@ -25,6 +27,9 @@ public class JavaCodeHere {
         Bubble[] bubbles = new Bubble[2];
         bubbles[0] = new Bubble(64);
         bubbles[1] = new Bubble(64);
+
+
+
 
         for (int i = 0; i < 2; i++) {
         }
@@ -42,4 +47,8 @@ public class JavaCodeHere {
 
 
     }
-}
+    int total = 0;
+    void mousPressed() {
+        total = total + 1;
+    }
+    }
