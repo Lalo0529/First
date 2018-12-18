@@ -1,8 +1,9 @@
 package proc
 
-import processing.core.PApplet
+import processing.core.{PApplet, PImage}
 import processing.core.PApplet._
 import processing.core.PConstants._
+
 
 class Bubbles extends PApplet {
   var total: Int = 10
@@ -10,24 +11,21 @@ class Bubbles extends PApplet {
   var b2: Bubble = null
   val bubbles = new Array[Bubble](100)
 
+  var star:PImage = null
+
   val ScreenDimension = 1080
   override def settings(): Unit = {
     size(ScreenDimension, ScreenDimension)
-    size(640,360)
+    size(600,300)
   }
 
   override def setup(): Unit = {
+    star = loadImage("circle.png")
     var i = 0
-    while ( {
-      i < bubbles.length
-    }) {
+    while ( {i < bubbles.length}) {
       bubbles(i) = new Bubble(64)
-
-      {
-        i += 1; i - 1
-      }
+      {i += 1; i - 1}
     }
-
   }
 
   override def mousePressed(): Unit = {
@@ -36,6 +34,8 @@ class Bubbles extends PApplet {
 
   override def draw(): Unit = {
     background(255)
+   // imageMode(CENTER)
+    //image(star,0,0)
     stroke(1)
     var i = 0
     while ( i < total  ) {
@@ -60,9 +60,11 @@ class Bubbles extends PApplet {
 
     def display(): Unit = {
 
-      stroke(0)
-      fill(127)
-      ellipse(x,y, diameter ,diameter)
+      //stroke(0)
+      //fill(127)
+      //ellipse(x,y, diameter ,diameter)
+      imageMode (CENTER)
+      image(star,x,y,diameter,diameter)
 
     }
 

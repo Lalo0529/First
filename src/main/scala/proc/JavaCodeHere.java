@@ -1,54 +1,64 @@
 package proc;
 
-public class JavaCodeHere {
-    class Bubble {
+import processing.core.PApplet;
+import processing.core.PImage;
 
-        public Bubble(int size) {
-        }
+public class JavaCodeHere extends PApplet {
 
-        public void ascend() {
-        }
-
-        public void display() {
-
-        }
-
-        public void top() {
-
-        }
+    PImage img;
+    PImage star;
+    public void settings() {
+        size(600, 400);
     }
+
+    public void setup() {
+
+    }
+
+    public void draw() {
+
+
+
+    }
+
 
     void javaCodeHere() {
 
-        int[] foo = new int[10];
-        int[] bar = {5, 6, 7, 8, 9};
+    }
 
-        int Bubbble;
-        Bubble[] bubbles = new Bubble[2];
-        bubbles[0] = new Bubble(64);
-        bubbles[1] = new Bubble(64);
-
-
-
-
-        for (int i = 0; i < 2; i++) {
-        }
-
-        for (int i = 0; i < 2; i++) {
-            bubbles[i].ascend();
-            bubbles[i].display();
-            bubbles[i].top();
-        }
-            for(int i = 0; i < 2; i++){
-                bubbles[i] = new Bubble(64);
-            }
-
-
-
+    public static void main(String[] args) {
+        PApplet.main(JavaCodeHere.class.getName());
 
     }
-    int total = 0;
-    void mousPressed() {
-        total = total + 1;
-    }
-    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
