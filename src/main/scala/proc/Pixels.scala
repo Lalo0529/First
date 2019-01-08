@@ -18,11 +18,23 @@ class Pixels extends PApplet {
 
   override def draw(): Unit = {
    background(0)
-    var X = 0
-    while (X < width) {
-      set(X, 200, color(255, 0, 0))
-      X += 1
+  //  var X = 0
+    //while (X < width) {
+      //set(X, 200, color(255, 0, 0))
+      //X += 1
+    //}
+    loadPixels()
+    var i = 0
+    while ( {
+      i < pixels.length
+    }) {
+      pixels(i) = color(random(255), 0, random(50, 200))
+
+      {
+        i += 1; i - 1
+      }
     }
+    updatePixels()
 
   }
 }

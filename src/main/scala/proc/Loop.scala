@@ -1,6 +1,6 @@
 package proc
 
-import processing.core.PApplet
+import processing.core.{PApplet, PImage}
 
 class Loop extends PApplet {
   val ScreenDimension = 1080
@@ -11,6 +11,7 @@ class Loop extends PApplet {
   }
   var x: Float = 0
   override def setup(): Unit = {
+
 
   }
 
