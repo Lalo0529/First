@@ -16,22 +16,29 @@ public class JavaCodeHere extends PApplet {
     }
 
     public void draw() {
-        image(frog,0,0);
-        loadPixels();
-        for(int X = 0; X < width; X++){
-            for(int Y = 0; Y < height; Y++){
-                float d = dist(X,Y,width/2,height/2);
-                int loc = X+Y*width;
-                pixels[loc] = color(d);
-
-            }
-        }
-        updatePixels();
 
     }
 
 
     void javaCodeHere() {
+        image(frog,0,0);
+        loadPixels();
+        frog.loadPixels();
+        for(int x = 0; x < width; x++) {
+            for(int y = 0; y < height; y++) {
+                int loc =  x+y*width;
+                float r = red(frog.pixels[loc]);
+                float g = green(frog.pixels[loc]);
+                float b = blue(frog.pixels[loc]);
+                float d = dist(mouseX,mouseY,x,y);
+                float factor = map(d,0,200,2,0);
+                pixels[loc] = color(r*factor,g*factor,b*factor);
+            }
+        }
+updatePixels();
+
+
+
 
     }
 

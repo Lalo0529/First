@@ -8,42 +8,52 @@ import processing.core.PConstants._
 class Frog extends PApplet {
   val ScreenDimension = 1080
 
-  var frog = null
+  var frog: PImage = null
   override def settings(): Unit = {
     size(ScreenDimension, ScreenDimension)
+    size(907,510)
   }
 
   override def setup(): Unit = {
 
+    frog = loadImage("frog.jpg")
+
   }
 
   override def draw(): Unit = {
-
-
+    image(frog, 0, 0)
     loadPixels()
-    var X = 0
+    frog.loadPixels()
+    var x = 0
     while ( {
-      X < width
+      x < width
     }) {
-      var Y = 0
+      var y = 0
       while ( {
-        Y < height
+        y < height
       }) {
-        val d = dist(X, Y, width / 2, height / 2)
-        val loc = X + Y * width
-        pixels(loc) = color(d)
+        val loc = x + y * width
+        val r = red(frog.pixels(loc))
+        val g = green(frog.pixels(loc))
+        val b = blue(frog.pixels(loc))
+        val d = dist(mouseX, mouseY, x, y)
+        val factor = map(d, 0, 200, 2, 0)
+        pixels(loc) = color(r * factor, g * factor, b * factor)
 
         {
-          Y += 1; Y - 1
+          y += 1; y - 1
         }
       }
 
       {
-        X += 1; X - 1
+        x += 1; x - 1
       }
     }
     updatePixels()
+
+
   }
+
 }
 
 object Frog extends PApplication
