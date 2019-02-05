@@ -7,38 +7,46 @@ public class JavaCodeHere extends PApplet {
 
 
     PImage frog;
-
+String[] words;
+int index = 0;
     public void settings() {
 
         size(600, 400);
     }
 
     public void setup() {
-        frog = loadImage("frog.jpg");
+        String [] lines = loadStrings("hamlet.txt");
+        String entireplay = join(lines,"");
+        println(entireplay);
+        words = splitTokens(entireplay,",.?'!");
+        printArray(words);
+        frameRate(5);
+
     }
 
     public void draw() {
+        background(0);
+        fill(255);
+        textSize(64);
+        textAlign(CENTER);
+        text(words[index],width/2,height/2);
+        index++;
+
+
+
+
+
 
     }
 
 
     void javaCodeHere() {
-        background(0);
-        image(frog, 0, 0);
-        for (int i = 0; i < 100; i++) {
-            float x = random(width);
-            float y = random(height);
-            int c = frog.get((int)x,(int)y);
-            fill(c);
-            noStroke();
-            ellipse(x, y, 16, 16);
-        }
-        updatePixels();
+
     }
 
 
 
-    public static void main(String[] args) {
+    public static void main(StringPApplet[] args) {
         PApplet.main(JavaCodeHere.class.getName());
 
     }
