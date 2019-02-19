@@ -2,43 +2,43 @@ package proc;
 
 import processing.core.PApplet;
 import processing.core.PImage;
+import processing.data.IntDict;
+import processing.data.Table;
+import processing.data.TableRow;
 
 public class JavaCodeHere extends PApplet {
 
-
-    PImage frog;
-String[] words;
-int index = 0;
+float x = 0;
     public void settings() {
 
         size(600, 400);
     }
 
     public void setup() {
-        String [] lines = loadStrings("hamlet.txt");
-        String entireplay = join(lines,"");
-        println(entireplay);
-        words = splitTokens(entireplay,",.?'!");
-        printArray(words);
-        frameRate(5);
-
+    loadData();
     }
 
     public void draw() {
-        background(0);
-        fill(255);
-        textSize(64);
-        textAlign(CENTER);
-        text(words[index],width/2,height/2);
-        index++;
+    background(0);
+    stroke(255);
+    strokeWeight(4);
+    line(x,0,x,height);
 
-
-
-
+    x = x +10;
+    if (x > width){
+    x = 0;
+}
 
 
     }
 
+
+
+
+    void loadData() {
+        println("GOT DATA");
+        delay(1000);
+    }
 
     void javaCodeHere() {
 
@@ -46,7 +46,7 @@ int index = 0;
 
 
 
-    public static void main(StringPApplet[] args) {
+    public static void main(JavaCodeHere[] args) {
         PApplet.main(JavaCodeHere.class.getName());
 
     }

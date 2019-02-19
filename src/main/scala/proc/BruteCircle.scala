@@ -56,5 +56,5 @@ class BruteCircle extends PApplet {
 }
 
 object BruteCircle {
-  def main(args: Array[StringPApplet]): Unit = PApplet.main("proc.BruteCircle")
+  def main(args: Array[String]): Unit = PApplet.main("proc.BruteCircle")
 }

@@ -1,7 +1,7 @@
 package proc
 
 object Test {
-  def main(args: Array[StringPApplet]): Unit = {
+  def main(args: Array[String]): Unit = {
 
   }
 }
