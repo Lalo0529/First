@@ -20,8 +20,10 @@ class Graphing extends PApplet {
   var yzoom: Float = 0
 
   val fs:Seq[Double => Double] = Seq(
-    x => (-1.0/4)*x + 3,
-    x => (-7.0/4)*x - 3
+    x => (2.0)*x - 4,
+    x => (-6.0)*x + 4,
+    x => math.sin(x),
+    x => x*x
   )
 
   override def settings(): Unit = {
