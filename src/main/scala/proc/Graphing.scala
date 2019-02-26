@@ -19,7 +19,10 @@ class Graphing extends PApplet {
   var xzoom: Float = 0
   var yzoom: Float = 0
 
-  val f:Double => Double = x => (-1.0/4)*x + 3
+  val fs:Seq[Double => Double] = Seq(
+    x => (-1.0/4)*x + 3,
+    x => (-7.0/4)*x - 3
+  )
 
   override def settings(): Unit = {
     size(1080, 1080)
@@ -51,11 +54,37 @@ class Graphing extends PApplet {
    var sx = 0
     while (sx < width) {
       val(x,_)= toGraph(sx,0)
-      val y = f(x)
-      val p = toScreen(x,y)
-      set(p._1,p._2,255)
+      for {
+        f <- fs
+      } {
+        val y = f(x)
+        val p = toScreen(x, y)
+        set(p._1, p._2, color(255))
+      }
       sx = sx + 1
     }
+
+    val (sxAxis,syAxis)= toScreen(0,0)
+    line(sxAxis,0,sxAxis,height)
+    line(0,syAxis,width, syAxis)
+
+    strokeWeight(1)
+    stroke(128)
+    for {
+      x<- math.floor(xmin)to math.ceil(xmax) by 1.0
+      (sx,_) = toScreen(x,0)
+    }{
+      line(sx,0,sx,height)
+    }
+
+  for {
+    y<-math.floor(ymin)to math.ceil(ymax)by 1.0
+    (_,sy) = toScreen(0,y)
+  }{
+    line(0,sy,width,sy)
+  }
+
+
   }
 
 }
