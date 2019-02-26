@@ -18,7 +18,9 @@ class Graphing extends PApplet {
   var ygrid: Float = 1
   var xzoom: Float = 0
   var yzoom: Float = 0
-  def f (x: Double):Double = (-1.0/4)*x + 3
+
+  val f:Double => Double = x => (-1.0/4)*x + 3
+
   override def settings(): Unit = {
     size(1080, 1080)
   }
