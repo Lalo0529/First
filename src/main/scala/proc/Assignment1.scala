@@ -9,7 +9,9 @@ class Assignment1 extends PApplet {
    val down: Float = 0
    val up = 0
    val gravity: Float = .5f
-   val ground: Float = 700
+   var ground: Float = 700
+   var currentVelocity: Float = 0
+  var yPos: Float = 0
   override def settings(): Unit = {
     size(ScreenDimension, ScreenDimension)
   size(600,340)
@@ -20,6 +22,9 @@ class Assignment1 extends PApplet {
   }
 
   override def draw(): Unit = {
+    yPos = yPos - currentVelocity
+    currentVelocity = currentVelocity - 1
+    if (yPos >=0)currentVelocity = 0
     Dino()
 
 
@@ -29,32 +34,14 @@ class Assignment1 extends PApplet {
   def Dino(): Unit = {
     background(255)
     fill(0)
-    rect(20,280,30,30)
+    rect(20,280+yPos,30,30)
   }
 
-  def jump(): Unit = {
-keyPressed
+  override def keyPressed(): Unit = {
+    if(yPos >=0)
+    currentVelocity = 10
+
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
